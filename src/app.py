@@ -10,10 +10,7 @@ with st.sidebar:
 
     strategy = st.selectbox(
         'Strategy',
-        [
-            'BTC Buy and Hold',
-            'ETH Buy and Hold',
-        ]
+        ['BTC Buy and Hold', 'ETH Buy and Hold']
     )
 
     DATE = '2024-04-21'
