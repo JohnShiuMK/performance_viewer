@@ -1,0 +1,17 @@
+name: 'perf_viewer'
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - altair=5.3
+  - ipykernel=6.26.0
+  - ipython=8.17.2
+  - jupyterlab=4.0.9
+  - pandas=2.2
+  - python=3.12
+  - streamlit=1.33
+  - vegafusion=1.6.6
+  - vegafusion-python-embed=1.6.6
+  - vegafusion-jupyter=1.6.6
+  - vega_datasets=0.9.0
+  - vl-convert-python=1.3.0
