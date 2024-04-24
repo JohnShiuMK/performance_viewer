@@ -14,7 +14,7 @@ To address this, we present an application developed using Streamlit. This app c
 
 Below, we demonstrate the app's usage with toy buy-and-hold strategies based on the [BTC](https://data.binance.vision/?prefix=data/futures/um/daily/klines/BTCUSDT/1m/) and [ETH](https://data.binance.vision/?prefix=data/futures/um/daily/klines/ETHUSDT/1m/) data from Binance.
 
-<video src="https://www.youtube.com/embed/NGmbRaO9QbI?si=pSJGP5bZUT72CFNC" width="560" height="315" />
+[![demo](img/demo.png)](https://www.youtube.com/embed/NGmbRaO9QbI?si=pSJGP5bZUT72CFNC)
 
 ## Installation Instructions
 
