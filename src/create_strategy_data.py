@@ -1,3 +1,7 @@
+# Download the data from 
+#  https://data.binance.vision/?prefix=data/futures/um/daily/klines/BTCUSDT/1m/
+#  https://data.binance.vision/?prefix=data/futures/um/daily/klines/ETHUSDT/1m/
+# and put them under ./data/raw/
 import pandas as pd
 
 for file in ["BTCUSDT-1m-2024-04-21.zip", "ETHUSDT-1m-2024-04-21.zip"]:

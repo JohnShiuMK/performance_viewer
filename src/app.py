@@ -1,11 +1,10 @@
 import streamlit as st
 import pandas as pd
 import altair as alt
-import datetime
 
 st.set_page_config(page_title="Performance Viewer")
 
-# sidebar selection
+# define sidebar selections
 with st.sidebar:
     st.title("Performance Viewer")
 
@@ -34,12 +33,13 @@ with st.sidebar:
         value=(df['time_str'].iloc[0], df['time_str'].iloc[-1])
     )
 
-# plotting
+# subset data based on selected time range
 df_sub = df.query(f"(time_str >= '{start_time}') & (time_str <= '{end_time}')").copy()
 df_sub['cummax'] = df_sub['close'].cummax()
 df_sub['drawdown'] = df_sub['close'] / df_sub['cummax'] - 1
 df_sub['return'] = (df_sub['close'] / df_sub['close'].shift() - 1).round(4)
 
+# calculate risk statistics
 annual_return = (df_sub['return'] * (60 * 24 * 365)).mean()
 annual_risk = (df_sub['return'] * (60 * 24 * 365)**0.5).std()
 max_dd = -df_sub['drawdown'].min()
@@ -55,6 +55,7 @@ risk_stat = pd.DataFrame({
     'Calmar Ratio': annual_return / max_dd
 }, index=[0]).set_index('Strategy')
 
+# plot charts
 av_chart = (
     alt.Chart(df_sub)
     .mark_line()
@@ -97,8 +98,7 @@ return_dist_chart = (
     )
 )
 
-
-# main panel
+# define main panel
 st.markdown("##### Asset Value")
 st.altair_chart(
     av_chart,
