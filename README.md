@@ -10,6 +10,8 @@ Missed medical appointments cost the healthcare system a lot of money and affect
 
 ## App Description
 
+Below, we demonstrate the app's usage with toy buy-and-hold strategies based on the [BTC](https://data.binance.vision/?prefix=data/futures/um/daily/klines/BTCUSDT/1m/) and [ETH](https://data.binance.vision/?prefix=data/futures/um/daily/klines/ETHUSDT/1m/) data from Binance.
+
 https://www.youtube.com/watch?v=t90iISeWdw8
 
 ## Installation Instructions
