@@ -6,7 +6,9 @@
 
 Target audience: Portfolio managers
 
-Missed medical appointments cost the healthcare system a lot of money and affects the quality of care. If we could understand which factors lead to missed appointments it may be possible to reduce their frequency and use the saved resources to improve patient outcomes. To address this challenge, this data visualization app allows health care administrators to visually explore a dataset of missed appointments to identify potentially underlying factors, such as the day of the week, the age of the patient, and the time between scheduling and the appointment. The app shows the distribution of factors contributing to appointment show/no show and allows users to explore different aspects of this data by filtering and re-ordering on different variables in order to compare factors that contribute to absence.
+Hedge funds each have their own trading styles and strategies, so they usually customize dashboards to effectively monitor their in-house trading strategies. However, portfolio managers and their quantitative teams often find themselves spending significant amount of time and resources on designing, constructing and maintaining dashboards, while their capability and primary responsibility are more on strategy research and development.
+
+To address this, we present an application developed using Streamlit. This app contains the essential metrics for strategy performance monitoring. But it requires approximately 100 lines of code only, and features straightforward logic! This simplicity not only facilitates initial use, but also boosts the scalability of the dashboard, making it a better alternative for strategy monitoring compared to other tools.
 
 ## App Description
 
