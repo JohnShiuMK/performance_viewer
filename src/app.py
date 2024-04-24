@@ -20,19 +20,13 @@ with st.sidebar:
     date = '2024-04-21'
     st.write("Date: ", date)
 
-    # data preprocessing
-    df = pd.read_csv(f"data/raw/{strategy[:3]}USDT-1m-{date}.csv")
-    df['datetime_utc'] = pd.to_datetime(df['close_time'], unit='ms')
-    df['datetime_utc_str'] = df['datetime_utc'].astype(str)
-    df['time_str'] = df['datetime_utc_str'].str[11:16]
-    
-    df['pos'] = 1 # FIXME
+    # read and preprocess data
+    df = pd.read_csv(f"data/processed/{strategy[:3]}USDT-1m-{date}.csv")
     df['cummax'] = df['close'].cummax()
     df['drawdown'] = df['close'] / df['cummax'] - 1
-    
+
     MIN_PLOT_DD = df['drawdown'].min() * 1.5
     MAX_PLOT_POS = df['pos'].max() * 5
-
 
     start_time, end_time = st.select_slider(
         'Time Range',
@@ -45,7 +39,6 @@ df_sub = df.query(f"(time_str >= '{start_time}') & (time_str <= '{end_time}')").
 df_sub['cummax'] = df_sub['close'].cummax()
 df_sub['drawdown'] = df_sub['close'] / df_sub['cummax'] - 1
 df_sub['return'] = (df_sub['close'] / df_sub['close'].shift() - 1).round(4)
-df_sub['pos'] = 1 # FIXME
 
 annual_return = (df_sub['return'] * (60 * 24 * 365)).mean()
 annual_risk = (df_sub['return'] * (60 * 24 * 365)**0.5).std()
