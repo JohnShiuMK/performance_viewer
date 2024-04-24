@@ -16,11 +16,10 @@ with st.sidebar:
         ]
     )
 
-    date = '2024-04-21'
-    st.write("Date: ", date)
+    DATE = '2024-04-21'
 
     # read and preprocess data
-    df = pd.read_csv(f"data/processed/{strategy[:3]}USDT-1m-{date}.csv")
+    df = pd.read_csv(f"data/processed/{strategy[:3]}USDT-1m-{DATE}.csv")
     df['cummax'] = df['close'].cummax()
     df['drawdown'] = df['close'] / df['cummax'] - 1
 
@@ -28,7 +27,7 @@ with st.sidebar:
     MAX_PLOT_POS = df['pos'].max() * 5
 
     start_time, end_time = st.select_slider(
-        'Time Range',
+        f'Time Range (Date: {DATE})',
         options=df['time_str'],
         value=(df['time_str'].iloc[0], df['time_str'].iloc[-1])
     )
@@ -40,6 +39,7 @@ df_sub['drawdown'] = df_sub['close'] / df_sub['cummax'] - 1
 df_sub['return'] = (df_sub['close'] / df_sub['close'].shift() - 1).round(4)
 
 # calculate risk statistics
+total_return = df_sub['close'].iloc[-1] / df_sub['close'].iloc[0] - 1
 annual_return = (df_sub['return'] * (60 * 24 * 365)).mean()
 annual_risk = (df_sub['return'] * (60 * 24 * 365)**0.5).std()
 max_dd = -df_sub['drawdown'].min()
@@ -48,6 +48,7 @@ calmar = annual_return / max_dd
 
 risk_stat = pd.DataFrame({
     'Strategy': strategy,
+    'Total Return': '{:.2%}'.format(total_return),
     'Annualized Return': '{:.2%}'.format(annual_return),
     'Annualized Risk': '{:.2%}'.format(annual_risk),
     'Maximum Drawdown': '{:.2%}'.format(max_dd),
@@ -93,7 +94,7 @@ return_dist_chart = (
     .transform_density('return', as_=['return', 'density'])
     .mark_area(opacity=0.5)
     .encode(
-        x=alt.X("return").axis(title="Return in Percentage", format='%'),
+        x=alt.X("return").axis(title="Return per Minute (in Percentage)", format='%'),
         y=alt.Y('density:Q').axis(title="Density"),
     )
 )
@@ -120,7 +121,7 @@ st.altair_chart(
 st.markdown("##### Risk Statistics")
 st.table(data=risk_stat)
 
-st.markdown("##### Return Distribution")
+st.markdown("##### Minute-Return Distribution")
 st.altair_chart(
     return_dist_chart,
     use_container_width=True
