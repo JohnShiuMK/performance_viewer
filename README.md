@@ -6,9 +6,9 @@
 
 Target audience: Portfolio managers
 
-Hedge funds each have their own trading styles and strategies, so they usually customize dashboards to effectively monitor their in-house trading strategies. However, portfolio managers and their quantitative teams often find themselves spending significant amount of time and resources on designing, constructing and maintaining dashboards, while their capability and primary responsibility are more on strategy research and development.
+Hedge funds each have their own trading styles and approaches, so they usually customize dashboards to effectively monitor their in-house trading strategies. However, portfolio managers and their quantitative teams often find themselves spending significant amount of time and resources on constructing and maintaining dashboards, while their capability and primary responsibility are more on strategy research and development.
 
-To address this, we present an application developed using Streamlit. This app contains the essential metrics for strategy performance monitoring. But it requires approximately 100 lines of code only, and features straightforward logic! This simplicity not only facilitates initial use, but also boosts the scalability of the dashboard, making it a better alternative for strategy monitoring compared to other tools.
+To address this, we present an application developed using Streamlit. This app contains the essential metrics for strategy performance monitoring. And it requires approximately 100 lines of code only, and features straightforward logic! This simplicity not only facilitates initial use of the dashboard, but also boosts its scalability, making it a better alternative for strategy monitoring compared to those developed by other tools.
 
 ## App Description
 
