@@ -4,6 +4,14 @@
 
 ## Motivation
 
+Target audience: Portfolio managers
+
+Missed medical appointments cost the healthcare system a lot of money and affects the quality of care. If we could understand which factors lead to missed appointments it may be possible to reduce their frequency and use the saved resources to improve patient outcomes. To address this challenge, this data visualization app allows health care administrators to visually explore a dataset of missed appointments to identify potentially underlying factors, such as the day of the week, the age of the patient, and the time between scheduling and the appointment. The app shows the distribution of factors contributing to appointment show/no show and allows users to explore different aspects of this data by filtering and re-ordering on different variables in order to compare factors that contribute to absence.
+
+## App Description
+
+https://www.youtube.com/watch?v=t90iISeWdw8
+
 ## Installation Instructions
 
 1. Clone this repository to your computer.
