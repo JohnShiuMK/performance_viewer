@@ -42,3 +42,13 @@ conda activate perf_viewer
 ```bash
 streamlit run src/app.py
 ```
+
+## License
+
+Trading Strategy Performance Viewer was created by John Shiu. It is licensed under the terms of the MIT license and the Attribution 4.0 International (CC BY 4.0 LEGAL CODE).
+
+## Credits
+
+Klines data in this repository is from the USDT-margined BTCUSDT and ETHUSDT futures, openly available on [Binance Market Data](https://data.binance.vision/?prefix=data/futures/um/daily/klines/).
+
+Banner was created by [Blossom D. in CryptoStars](https://blog.cryptostars.is/whats-your-strategy-for-trading-crypto-and-stocks-99bd121b133a).
